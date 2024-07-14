@@ -14,4 +14,4 @@ services:
       - INIT_GID=${DEV_GID}
       - GRANT_SUDO=yes
       - PRESERVE_ROOT=yes
-    command: ["init.sh", "/usr/sbin/sshd", "-D", "-d"]
+    command: ["init.sh", "/usr/sbin/sshd", "-D"]
