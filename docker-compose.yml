@@ -6,7 +6,7 @@ services:
     ports:
       - "2222:22"
     volumes:
-      - ./work/home/josh:/home/josh
+      - "./work/home/${DEV_USER}:/home/${DEV_USER}"
     environment:
       - INIT_USER=${DEV_USER}
       - INIT_UID=${DEV_UID}
