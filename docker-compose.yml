@@ -1,0 +1,17 @@
+services:
+  sshd:
+    build: .
+    image: sshd_example
+    container_name: sshd_container
+    ports:
+      - "2222:22"
+    volumes:
+      - ./work/home/josh:/home/josh
+    environment:
+      - INIT_USER=${DEV_USER}
+      - INIT_UID=${DEV_UID}
+      - INIT_GROUP=${DEV_GROUP}
+      - INIT_GID=${DEV_GID}
+      - GRANT_SUDO=yes
+      - PRESERVE_ROOT=yes
+    command: ["init.sh", "/usr/sbin/sshd", "-D", "-d"]
